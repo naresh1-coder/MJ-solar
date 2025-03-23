@@ -74,7 +74,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <Hero
-        title="Powring The Future Infinitely"
+        title="Powering The Future Infinitely"
         subtitle="Harness the sun's energy with our cutting-edge solar solutions. Reduce your carbon footprint and save on electricity bills."
         ctaText="Get a Free Quote"
         ctaLink="/contact"
