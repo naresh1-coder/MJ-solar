@@ -1,0 +1,260 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 84% 45%;
+
+    --radius: 0.5rem;
+
+    /* Solar specific colors */
+    --solar-red: 0 84% 60%;
+    --solar-black: 0 0% 7%;
+    --solar-dark: 0 0% 12%;
+    --solar-light: 0 0% 98%;
+    --solar-gray: 0 0% 85%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 84% 60%;
+
+    /* Solar specific colors (dark mode) */
+    --solar-red: 0 84% 60%;
+    --solar-black: 0 0% 0%;
+    --solar-dark: 0 0% 5%;
+    --solar-light: 0 0% 98%;
+    --solar-gray: 0 0% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-solar-red selection:text-solar-light;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300 ease-in-out;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-background/80 backdrop-blur-md border border-border shadow-md;
+  }
+  
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl p-6 flex flex-col gap-4 
+           bg-background/50 backdrop-blur-lg border border-border 
+           shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  .red-gradient {
+    @apply bg-gradient-to-r from-solar-red to-[#ff8c5f] text-solar-light;
+  }
+  
+  .red-gradient-hover {
+    @apply hover:bg-gradient-to-r hover:from-solar-red hover:to-[#ff8c5f] hover:text-solar-light transition-all duration-300;
+  }
+  
+  .link-underline {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 
+           after:h-0.5 after:bottom-0 after:left-0 after:bg-solar-red 
+           after:origin-bottom-right after:transition-transform after:duration-300 
+           hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .solar-section {
+    @apply py-16 px-4 md:px-8 lg:px-16 xl:px-24 max-w-7xl mx-auto;
+  }
+  
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold tracking-tight;
+  }
+  
+  .heading-sm {
+    @apply text-xl md:text-2xl font-bold tracking-tight;
+  }
+  
+  .subtitle {
+    @apply text-lg md:text-xl text-muted-foreground;
+  }
+  
+  .card-shadow {
+    @apply shadow-[0_10px_20px_rgba(0,0,0,0.1)];
+  }
+  
+  .card-hover {
+    @apply hover:shadow-[0_15px_30px_rgba(0,0,0,0.15)] transition-all duration-300;
+  }
+  
+  .solar-button {
+    @apply px-6 py-3 rounded-md font-medium tracking-wide transform transition-all 
+           duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-solar-red focus:ring-opacity-50;
+  }
+  
+  .solar-button-primary {
+    @apply solar-button bg-solar-red text-solar-light hover:bg-solar-red/90 active:scale-[0.98];
+  }
+  
+  .solar-button-secondary {
+    @apply solar-button bg-secondary text-foreground hover:bg-secondary/80 active:scale-[0.98];
+  }
+  
+  .solar-button-outline {
+    @apply solar-button bg-transparent border border-solar-red text-solar-red 
+           hover:bg-solar-red hover:text-solar-light active:scale-[0.98];
+  }
+  
+  .solar-input {
+    @apply w-full px-4 py-3 rounded-md border border-input bg-background text-foreground 
+           focus:outline-none focus:ring-2 focus:ring-solar-red focus:border-solar-red transition-all duration-300;
+  }
+}
+
+/* Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* Utility animations */
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulse animation for CTA buttons */
+.pulse-animation {
+  position: relative;
+}
+
+.pulse-animation::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: currentColor;
+  opacity: 0.15;
+  z-index: -1;
+  transform-origin: center;
+  animation: pulse-ring 2s cubic-bezier(0.55, 0, 0.55, 0.2) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
