@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/hooks/useTheme";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import GridSystems from "./pages/GridSystems";
@@ -65,7 +64,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/about" element={<About />} />
-      <Route path="/services" element={<Services />} />
+    
       <Route path="/services/grid" element={<GridSystems />} />
       <Route path="/services/off-grid" element={<OffGridSystems />} />
       <Route path="/services/hybrid" element={<HybridSystems />} />
