@@ -209,7 +209,7 @@ const Contact = () => {
         <div className="space-y-6">
           <h3 className="text-xl font-bold">Definitions</h3>
           <ul className="list-disc list-inside text-lg">
-            <li><strong>Company:</strong> EnerGPT Solutions Pvt. Ltd.</li>
+            <li><strong>Company:</strong> MJ Solar.</li>
             <li><strong>Customer:</strong> The person or entity purchasing solar installation services.</li>
             <li><strong>System:</strong> The solar panels and related equipment installed by the Company.</li>
           </ul>

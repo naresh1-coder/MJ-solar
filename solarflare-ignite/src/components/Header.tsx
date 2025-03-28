@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/constants';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logo from "../assets/logo1.png";
+import logo from "../assets/logo1.jpg";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -116,56 +116,54 @@ export function Header() {
       </div>
 
       {/* Mobile Menu */}
-   {/* Mobile Menu */}
-{mobileMenuOpen && (
-  <div className="md:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-md z-40 animate-fade-in">
-    <nav className="flex flex-col items-center justify-center h-full gap-6">
-      {siteConfig.navigation.map((item) => (
-        <div key={item.href} className="w-full text-center">
-          {item.title === 'Services' ? (
-            <div className="flex flex-col items-center">
-              <button
-                onClick={handleServiceClick}
-                className={cn(
-                  'text-lg font-semibold transition-colors duration-300 py-2',
-                  location.pathname === item.href ? 'text-solar-red' : 'text-foreground hover:text-solar-red'
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-md z-40 animate-fade-in">
+          <nav className="flex flex-col items-center justify-center h-full gap-8">
+            {siteConfig.navigation.map((item) => (
+              <div key={item.href}>
+                {item.title === 'Services' ? (
+                  <div className="flex flex-col items-center">
+                    <button
+                      onClick={handleServiceClick}
+                      className={cn(
+                        'text-xl font-medium transition-colors duration-300',
+                        location.pathname === item.href ? 'text-solar-red' : 'text-foreground hover:text-solar-red'
+                      )}
+                    >
+                      {item.title}
+                    </button>
+                    {serviceMenuOpen && (
+                      <div className="mt-2 flex flex-col items-center">
+                        <Link to="/services/grid" className="text-lg text-gray-700 hover:text-solar-red">On Grid System</Link>
+                        <Link to="/services/off-grid" className="text-lg text-gray-700 hover:text-solar-red">Off Grid System</Link>
+                        <Link to="/services/hybrid" className="text-lg text-gray-700 hover:text-solar-red">Hybrid System</Link>
+                        <Link to="/services/solar-pumps" className="text-lg text-gray-700 hover:text-solar-red">Solar Pump</Link>
+                       <Link to="/services/solar-panels" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solar Panels</Link>
+                        </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      'text-xl font-medium transition-colors duration-300',
+                      location.pathname === item.href ? 'text-solar-red' : 'text-foreground hover:text-solar-red'
+                    )}
+                  >
+                    {item.title}
+                  </Link>
                 )}
-              >
-                {item.title}
-              </button>
-              {serviceMenuOpen && (
-                <div className="mt-2 flex flex-col items-center gap-2">
-                  <Link to="/services/grid" className="text-base text-gray-700 hover:text-solar-red py-1">On Grid</Link>
-                  <Link to="/services/off-grid" className="text-base text-gray-700 hover:text-solar-red py-1">Off Grid</Link>
-                  <Link to="/services/hybrid" className="text-base text-gray-700 hover:text-solar-red py-1">Hybrid</Link>
-                  <Link to="/services/solar-pumps" className="text-base text-gray-700 hover:text-solar-red py-1">Solar Pumps</Link>
-                  <Link to="/services/solar-panels" className="text-base text-gray-700 hover:text-solar-red py-1">Solar Panels</Link>
-                </div>
-              )}
-            </div>
-          ) : (
-            <Link
-              to={item.href}
-              className={cn(
-                'text-lg font-semibold transition-colors duration-300 py-2 block',
-                location.pathname === item.href ? 'text-solar-red' : 'text-foreground hover:text-solar-red'
-              )}
+              </div>
+            ))}
+            <Link 
+              to="/contact" 
+              className="solar-button-primary mt-4"
             >
-              {item.title}
+              Get Free Quote
             </Link>
-          )}
+          </nav>
         </div>
-      ))}
-      <Link 
-        to="/contact" 
-        className="solar-button-primary mt-4 px-6 py-2 text-lg font-semibold"
-      >
-        Get Free Quote
-      </Link>
-    </nav>
-  </div>
-)}
-
+      )}
     </header>
   );
 }
