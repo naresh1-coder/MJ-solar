@@ -22,6 +22,7 @@ interface HeroProps {
   secondaryCtaLink?: string;
   className?: string;
   children?: React.ReactNode;
+  dontShowCta?: boolean; // New prop to hide CTA
 }
 
 export function Hero({
@@ -33,6 +34,7 @@ export function Hero({
   secondaryCtaLink,
   className,
   children,
+  dontShowCta = false, // Default to false
 }: HeroProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -71,23 +73,23 @@ export function Hero({
           <span className="text-solar-red">{title.split(' ')[0]} </span>
           {title.split(' ').slice(1).join(' ')}
         </h1>
-        
+
         {subtitle && <p className="subtitle mb-8 animate-slide-down text-white/80">{subtitle}</p>}
-        
+
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-slide-up">
-          {ctaText && (
+          {!dontShowCta && ( // Hide the button if dontShowCta is true
             <Link to={ctaLink} className="solar-button-primary pulse-animation">
               {ctaText} <ArrowRight className="inline-block h-4 w-4 ml-1" />
             </Link>
           )}
-          
+
           {secondaryCtaText && secondaryCtaLink && (
             <Link to={secondaryCtaLink} className="solar-button bg-white/15 text-white backdrop-blur-sm hover:bg-white/25">
               {secondaryCtaText}
             </Link>
           )}
         </div>
-        
+
         {children && <div className="mt-12 animate-fade-in">{children}</div>}
       </div>
     </section>

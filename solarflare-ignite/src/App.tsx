@@ -15,6 +15,7 @@ import HybridSystems from "./pages/HybridSystems";
 import SolarPumps from "./pages/SolarPumps";
 import { useEffect } from "react";
 import WhatsAppButton from "./components/WhatsappButton";
+import SolarPanels from "./pages/SolarPanels";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const AppRoutes = () => {
       <Route path="/services/off-grid" element={<OffGridSystems />} />
       <Route path="/services/hybrid" element={<HybridSystems />} />
       <Route path="/services/solar-pumps" element={<SolarPumps />} />
+      <Route path="/services/solar-panels" element={<SolarPanels />} />
       <Route path="/contact" element={<Contact />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />

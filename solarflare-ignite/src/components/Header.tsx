@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/constants';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logo from "../assets/logo1.jpg";
+import logo from "../assets/logo1.png";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,6 +72,7 @@ export function Header() {
                       <Link to="/services/off-grid" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Off Grid System</Link>
                       <Link to="/services/hybrid" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Hybrid System</Link>
                       <Link to="/services/solar-pumps" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solar Pump</Link>
+                      <Link to="/services/solar-panels" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solar Panels</Link>
                     </div>
                   )}
                 </div>
@@ -137,7 +138,8 @@ export function Header() {
                         <Link to="/services/off-grid" className="text-lg text-gray-700 hover:text-solar-red">Off Grid System</Link>
                         <Link to="/services/hybrid" className="text-lg text-gray-700 hover:text-solar-red">Hybrid System</Link>
                         <Link to="/services/solar-pumps" className="text-lg text-gray-700 hover:text-solar-red">Solar Pump</Link>
-                      </div>
+                       <Link to="/services/solar-panels" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Solar Panels</Link>
+                        </div>
                     )}
                   </div>
                 ) : (

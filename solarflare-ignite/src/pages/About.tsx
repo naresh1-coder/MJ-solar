@@ -229,7 +229,36 @@ const About = () => {
           </a>
         </div>
       </section>
-      
+      <section className="solar-section bg-secondary p-8 rounded-xl shadow-lg my-12 ">
+        <h2 className="heading-lg mb-6 text-center">Terms and <span className="text-solar-red">Conditions</span></h2>
+        <div className="space-y-6">
+          <h3 className="text-xl font-bold">Definitions</h3>
+          <ul className="list-disc list-inside text-lg">
+            <li><strong>Company:</strong> EnerGPT Solutions Pvt. Ltd.</li>
+            <li><strong>Customer:</strong> The person or entity purchasing solar installation services.</li>
+            <li><strong>System:</strong> The solar panels and related equipment installed by the Company.</li>
+          </ul>
+          
+          <h3 className="text-xl font-bold">Scope of Work</h3>
+          <p>The Company agrees to design, supply, install, and commission a solar power system at the Customer’s premises as per the mutually agreed proposal.</p>
+          
+          <h3 className="text-xl font-bold">Site Assessment</h3>
+          <p>The installation is subject to a site survey to assess technical feasibility. Any additional costs due to unforeseen site conditions will be borne by the Customer.</p>
+          
+          <h3 className="text-xl font-bold">Permits and Approvals</h3>
+          <p>The Company will assist in obtaining necessary permits from APERC and the local utility company. The Customer must provide site access and cooperate with authorities.</p>
+          
+          <h3 className="text-xl font-bold">Payment Terms</h3>
+          <ul className="list-disc list-inside text-lg">
+            <li>10% upon signing of the contract (before site visit).</li>
+            <li>80% before dispatch of material.</li>
+            <li>10% before completion and commissioning.</li>
+          </ul>
+          
+          <h3 className="text-xl font-bold">Installation Timeline</h3>
+          <p>Installation begins within 2–3 weeks after all approvals and initial payment.</p>
+        </div>
+      </section>
       <Footer />
     </div>
   );
