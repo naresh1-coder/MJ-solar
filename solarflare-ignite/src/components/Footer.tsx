@@ -14,9 +14,9 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
               <div className="flex items-center justify-center w-8 h-8 bg-solar-red rounded-md mr-2">
-                <span className="text-white text-sm font-bold">SP</span>
+                <span className="text-white text-sm font-bold">MJ</span>
               </div>
-              SolarPower Pro
+              Solar
             </h3>
             <p className="text-muted-foreground mb-4">
               Providing clean and renewable energy solutions since 1995. We're committed to a sustainable future.
