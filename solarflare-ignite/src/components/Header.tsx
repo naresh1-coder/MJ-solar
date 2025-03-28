@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/constants';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logo from "../assets/logo1.jpg";
+import logo from "../assets/logo1.png";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
