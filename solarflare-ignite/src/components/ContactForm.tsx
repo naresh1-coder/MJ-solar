@@ -53,7 +53,7 @@ export function ContactForm({ className }: ContactFormProps) {
       \nMessage: ${message}`;
 
       // Encode the message for URL
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=918341131263&text=${encodeURIComponent(whatsappMessage)}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=918688749050&text=${encodeURIComponent(whatsappMessage)}`;
 
       // Redirect user to WhatsApp
       window.open(whatsappUrl, '_blank');
