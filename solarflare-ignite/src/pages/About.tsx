@@ -11,7 +11,7 @@ const About = () => {
       
       {/* Hero Section */}
       <Hero
-        title="About SolarPower Pro"
+        title="MJ Solar"
         subtitle="We're on a mission to accelerate the transition to clean, sustainable energy."
       />
       

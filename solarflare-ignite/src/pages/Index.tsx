@@ -93,7 +93,7 @@ const Index = () => {
          We've been at the forefront of renewable energy innovation, bringing sustainable power solutions to homes and businesses across the country.
       </p>
       <ul className="space-y-3 mb-8">
-        {['High-quality solar panels with 25-year warranty', 
+        {['High-quality solar panels with 30-years warranty', 
           'Expert installation by certified professionals',
           'Customized solutions tailored to your needs',
           '24/7 monitoring and dedicated support'].map((item, i) => (

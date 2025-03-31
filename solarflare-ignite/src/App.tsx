@@ -15,6 +15,8 @@ import SolarPumps from "./pages/SolarPumps";
 import { useEffect } from "react";
 import WhatsAppButton from "./components/WhatsappButton";
 import SolarPanels from "./pages/SolarPanels";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +73,8 @@ const AppRoutes = () => {
       <Route path="/services/solar-pumps" element={<SolarPumps />} />
       <Route path="/services/solar-panels" element={<SolarPanels />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/terms" element={<TermsAndConditions/>} />
+      <Route path="/privacy" element={<PrivacyPolicy/>} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>
