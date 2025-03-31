@@ -10,8 +10,8 @@ export const siteConfig = {
   ],
   services: [
     {
-      id: "grid",
-      title: "Grid Systems",
+      id: "on-grid",
+      title: "On-Grid Systems",
       description: "Connect to the grid and reduce your electricity bills with our premium grid-tied solar solutions.",
       icon: "zap",
     },
