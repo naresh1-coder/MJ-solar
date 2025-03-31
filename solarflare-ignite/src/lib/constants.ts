@@ -38,7 +38,7 @@ export const siteConfig = {
     {
       name: "Sarah Johnson",
       title: "Homeowner",
-      content: "Installing solar panels with SolarPower Pro was the best decision we made for our home. Our electricity bills have dropped by 85% and the system looks great!",
+      content: "Installing solar panels with MJ Solar was the best decision we made for our home. Our electricity bills have dropped by 85% and the system looks great!",
       rating: 5,
     },
     {
@@ -61,7 +61,7 @@ export const siteConfig = {
     { value: "EMI", label: "EMI Available" },
   ],
   contact: {
-    phone: "+123456789",
+    phone: "+91 86887 49050",
     email: "info@mjsolar.com",
     address: "Srikakulam",
   },

@@ -116,7 +116,7 @@ export function Footer() {
         
         {/* Copyright */}
         <div className="pt-8 border-t border-border text-center text-muted-foreground">
-          <p>© {currentYear} SolarPower Pro. All rights reserved.</p>
+          <p>© {currentYear} MJ Solar. All rights reserved.</p>
         </div>
       </div>
     </footer>
